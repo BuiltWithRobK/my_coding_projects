@@ -2,13 +2,15 @@
 import csv
 import os
 
-#create a way to check for the referenced file; if no file create one with specific headers (should only occur once)
-fileName = "expenseTracker.csv"
 
+fileName = "expenseTracker.csv"
+headers = ["Date", "Expense", "Description", "Category"]
+
+#create a way to check for the referenced file; if no file create one with specific headers (should only occur once)
 if not os.path.exists(fileName):
     with open('expenseTracker.csv', 'w', newline='') as f:
-        write = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        write.writerow("Date", "Expense", "Description", "Category")
+        write = csv.writer(f)
+        write.writerow(headers)
 
 #Collect user expense input
 date = input("Expense Date? ")
