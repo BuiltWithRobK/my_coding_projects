@@ -16,7 +16,30 @@ if not os.path.exists(fileName):
 date = input("Expense Date? ")
 expense = input("How much was it? ")
 description = input("What store? ")
-category = input("What categoy should this go in? ")
+
+#only certain categories are allowed, return error to reenter a possible category. error should include categories allowed.
+while True:
+    try:
+        category = input("What categoy should this go in? ")
+        if category.lower() == "gas":
+            category = "gas"
+            break
+        elif category.lower() == "groceries":
+            category = "groceries"
+            break 
+        elif category.lower() == "bills":
+            category = "groceries"
+            break 
+        elif category.lower() == "fun":
+            category = "groceries"
+            break
+        elif category.lower() == "fast food":
+            category = "groceries"
+            break
+        else:
+            print("Unrecognized category, try gas/groceries/bills/fun/fast food")
+    except ValueError:
+        print("Unrecognized category, try gas/groceries/bills/fun/fast food")
 
 #store user input as one value
 NewExpense = [date, expense, description, category]
