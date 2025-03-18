@@ -13,4 +13,4 @@ __pycache__/
 *.log
 
 # Ignore csv files
-.csv
+*.csv
