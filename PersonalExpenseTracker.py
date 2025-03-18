@@ -65,6 +65,23 @@ class ExpenseTracker():
                 print(', '.join(row))
 
 
+    def monthly_trends(self):
+        #ask user if they want to see monthly trends for each spending category
+        #(start with returning total spent in each)
+        while True:
+            try:
+                monthlyTrend = input("Would you like to see monthly expense trends? ")
+                if monthlyTrend.lower == "yes":
+                    #read csv. need to sort by month, then by category, then total expense column as
+                    #total for "category". should be done for all categories (5)
+                    print()
+                else:
+                    print("User elected to pass monthly trends.")
+                    break
+            except ValueError:
+                print("Invalid input, please enter yes or no. ")
+
+
 def main():
     tracker = ExpenseTracker()
     new_expense = tracker.collect_user_expense()
