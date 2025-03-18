@@ -10,8 +10,8 @@ app = Flask(__name__)
 def home():
     return "Hello, Flask!"
 
-
-@app.route("/hello/<name>")
+#initial minimal flask app and run from terminal
+'''@app.route("/hello/<name>")
 def hello_there(name):
     now = datetime.now()
     formatted_now = now.strftime("%a, %d %b, %y at %X")
@@ -26,6 +26,14 @@ def hello_there(name):
         clean_name = "Friend"
 
     content = "Hello there, " + clean_name + "! It's " + formatted_now
-    return content
+    return content'''
 
-
+#simplified flask app using html templates and static style sheets
+@app.route("/hello/")
+@app.route("/hello/<name>")
+def hello_there(name = None):
+    return render_template(
+        "hello_there.html",
+        name=name,
+        date=datetime.now()
+    )
