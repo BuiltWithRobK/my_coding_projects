@@ -49,12 +49,21 @@ class FishingTrip{
         }
         else if (choice == 2) {
             System.out.println("Now the user can view all trips!");
+            //find source file and output all trips recorded
         }
         else if (choice == 3) {
             System.out.println("Now the user can view trips by location!");
+            //request user input for specific location and set variable
+            //then take input, make sure it is cleaned well enough to not output errors... all lower?
+            //then open source file for data storage and search based on input
+            //output all matching searches
         }
         else if (choice == 4) {
-            System.out.println("Now the user can trips by date!");
+            System.out.println("Now the user can view trips by date!");
+            //request user input for specific date and set variable... seperate entry for m d and y
+            //then take input, make sure it is cleaned well enough to not output errors and combine into one date
+            //then open source file for data storage and search based on input
+            //output all matching searches for date
         }
         
     }
